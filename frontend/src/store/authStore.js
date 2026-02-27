@@ -2,7 +2,7 @@ import {create} from 'zustand';
 import axios from 'axios';
 
 
-const api = "http://localhost:5000/api/auth";
+const api = import.meta.env.MODE === "development" ? "http://localhost:5000/api/auth" : "/api/auth";
 
 axios.defaults.withCredentials = true;
 
